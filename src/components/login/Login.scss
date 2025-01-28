@@ -1,0 +1,13 @@
+.cmp-login {
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 20px;
+
+    input {
+      border: solid 1px black;
+      outline: none;
+    }
+  }
+}

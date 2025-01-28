@@ -1,25 +1,13 @@
 <template>
   <div id="app">
-    <HomeView />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HomeView from "./views/HomeView.vue";
+import "./App.scss";
 
 export default {
   name: "App",
-  components: {
-    HomeView,
-  },
 };
 </script>
-
-<style>
-#app {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-family: sans-serif;
-}
-</style>
