@@ -2,8 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
-import router from './router/index';
-import auth from './store/auth'
+import router from "./router/index";
+import store from "./store";
 
 Vue.config.productionTip = false;
 
@@ -14,6 +14,6 @@ const vuetify = new Vuetify();
 new Vue({
   router,
   vuetify,
-  auth,
+  store,
   render: (h) => h(App),
 }).$mount("#app");

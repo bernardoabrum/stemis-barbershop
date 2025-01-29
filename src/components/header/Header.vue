@@ -1,7 +1,30 @@
 <template>
-  <div class="cmp-header"></div>
+  <div class="cmp-header">
+    <span v-if="authenticated">Bem vindo {{ userInfo.name }}!</span>
+    <span v-else>Não autenticado</span>
+    <br />
+    <button v-if="authenticated" @click="handleLogout">Sair</button>
+  </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters, mapMutations } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      authenticated: "isAuthenticated",
+      userInfo: "user",
+    }),
+  },
+  methods: {
+    ...mapMutations({
+      logoutUser: "logout",
+    }),
+    handleLogout() {
+      this.logoutUser();
+      this.$router.push("/authenticate");
+    },
+  },
+};
 </script>

@@ -36,13 +36,13 @@ export default {
         );
 
         if (user) {
+          this.$store.commit("setUser", user);
           this.$router.push("/home");
-          console.log("Entrou com sucesso!");
         } else {
-          console.log("Usuário não encontrado!");
+          alert("Usuário não encontrado!");
         }
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     },
   },

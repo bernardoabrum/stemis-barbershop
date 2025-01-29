@@ -3,6 +3,17 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+const persistStatePlugin = (store) => {
+  const persistedState = localStorage.getItem("vuex");
+  if (persistedState) {
+    store.replaceState(JSON.parse(persistedState));
+  }
+
+  store.subscribe((mutation, state) => {
+    localStorage.setItem("vuex", JSON.stringify(state));
+  });
+};
+
 export default new Vuex.Store({
   state: {
     user: null,
@@ -14,7 +25,7 @@ export default new Vuex.Store({
       state.isAuthenticated = !!user;
     },
 
-    clearUser(state) {
+    logout(state) {
       state.user = null;
       state.isAuthenticated = false;
     },
@@ -27,4 +38,5 @@ export default new Vuex.Store({
       return state.user;
     },
   },
+  plugins: [persistStatePlugin],
 });

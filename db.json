@@ -2,14 +2,14 @@
   "users": [
     {
       "id": "ce0c",
-      "name": "Jose",
+      "name": "José",
       "email": "jose@teste",
       "password": "123123",
       "isAdmin": true
     },
     {
       "id": "34bb",
-      "name": "Joao",
+      "name": "João",
       "email": "joao@teste",
       "password": "123123"
     }
