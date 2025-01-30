@@ -1,11 +1,10 @@
 <template>
   <div class="scheduling-page">
-    <div class="stepper-container">
+    <div>
       <Stepper v-if="activeStep" />
     </div>
-    <div v-if="!activeStep" class="button-container">
-      <v-btn outlined @click="serviceStep">Reservar horário</v-btn>
-      <v-btn outlined>Meus agendamentos</v-btn>
+    <div>
+      <Home v-if="!activeStep" />
     </div>
     <div>
       <Service v-if="activeStep === 1" />
@@ -13,15 +12,20 @@
     <div>
       <Barber v-if="activeStep === 2" />
     </div>
+    <div>
+      <Datetime v-if="activeStep === 3" />
+    </div>
   </div>
 </template>
 
 <script>
 import "./Scheduling.scss";
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 import Stepper from "@/components/stepper/Stepper.vue";
+import Home from "@/components/home/Home.vue";
 import Service from "@/components/service/Service.vue";
 import Barber from "@/components/barber/Barber.vue";
+import Datetime from "@/components/datetime/Datetime.vue";
 
 export default {
   computed: {
@@ -31,16 +35,10 @@ export default {
   },
   components: {
     Stepper,
+    Home,
     Service,
     Barber,
-  },
-  methods: {
-    ...mapMutations({
-      setActiveStep: "setActiveStep",
-    }),
-    serviceStep() {
-      this.setActiveStep(1);
-    },
+    Datetime,
   },
 };
 </script>

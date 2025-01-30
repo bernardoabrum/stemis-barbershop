@@ -20,9 +20,13 @@ export default {
   methods: {
     ...mapMutations({
       logoutUser: "logout",
+      clearSchedulingInfo: "clearSchedulingInfo",
+      setActiveStep: "setActiveStep"
     }),
     handleLogout() {
       this.logoutUser();
+      this.clearSchedulingInfo()
+      this.setActiveStep(0)
       this.$router.push("/authenticate");
     },
   },

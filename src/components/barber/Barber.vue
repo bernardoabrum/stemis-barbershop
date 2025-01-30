@@ -46,9 +46,8 @@ export default {
     },
 
     setSelectedBarber(barber) {
-      console.log("a");
       this.setSchedulingInfo({ barber });
-      // this.setActiveStep(3);
+      this.setActiveStep(3);
     },
   },
 };

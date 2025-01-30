@@ -41,6 +41,9 @@ export default new Vuex.Store({
         ...payload,
       };
     },
+    clearSchedulingInfo(state) {
+      state.schedulingInfo = {};
+    },
     setActiveStep(state, step) {
       state.activeStep = step;
     },

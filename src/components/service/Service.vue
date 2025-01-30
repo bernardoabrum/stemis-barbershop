@@ -40,7 +40,7 @@ export default {
         const response = await axios.get("http://localhost:3000/services");
         this.services = response.data;
       } catch (error) {
-        console.error("Erro ao buscar serviços");
+        console.error(error);
       }
     },
 
