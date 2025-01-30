@@ -13,5 +13,23 @@
       "email": "joao@teste",
       "password": "123123"
     }
+  ],
+  "services": [
+    {
+      "name": "Corte",
+      "price": 30.0
+    },
+    {
+      "name": "Barba",
+      "price": 25.0
+    },
+    {
+      "name": "Corte + Barba",
+      "price": 50.0
+    },
+    {
+      "name": "Sobrancelha",
+      "price": 10.0
+    }
   ]
 }

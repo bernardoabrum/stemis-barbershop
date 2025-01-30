@@ -2,13 +2,13 @@
   <div class="cmp-header">
     <span v-if="authenticated">Bem vindo {{ userInfo.name }}!</span>
     <span v-else>Não autenticado</span>
-    <br />
     <button v-if="authenticated" @click="handleLogout">Sair</button>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import "./Header.scss"
 
 export default {
   computed: {

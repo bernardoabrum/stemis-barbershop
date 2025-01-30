@@ -1,5 +1,5 @@
 <template>
-  <div class="cmp-authenticate">
+  <div class="authenticate-page">
     <h1>Authenticate Page</h1>
     <div class="container-login">
       <Login />

@@ -1,0 +1,13 @@
+.scheduling-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+  }
+}

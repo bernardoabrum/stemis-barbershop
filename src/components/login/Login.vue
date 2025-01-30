@@ -37,7 +37,7 @@ export default {
 
         if (user) {
           this.$store.commit("setUser", user);
-          this.$router.push("/home");
+          this.$router.push("/scheduling");
         } else {
           alert("Usuário não encontrado!");
         }

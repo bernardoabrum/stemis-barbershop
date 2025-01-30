@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Home from "../views/home/Home.vue";
+import Scheduling from "../views/scheduling/Scheduling.vue";
 import Authenticate from "../views/authenticate/Authenticate.vue";
 import store from "@/store";
 
@@ -18,9 +18,9 @@ const routes = [
     component: Authenticate,
   },
   {
-    path: "/home",
-    name: "Home",
-    component: Home,
+    path: "/scheduling",
+    name: "Scheduling",
+    component: Scheduling,
   },
 ];
 
@@ -32,13 +32,13 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   const isAuthenticated = store.getters.isAuthenticated;
 
-  if (to.name === "Home" && !isAuthenticated) {
+  if (to.name === "Scheduling" && !isAuthenticated) {
     next("/authenticate");
   } else {
     next();
   }
   if (to.name === "Authenticate" && isAuthenticated) {
-    next("/home");
+    next("/scheduling");
   } else {
     next();
   }
