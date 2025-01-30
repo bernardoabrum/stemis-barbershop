@@ -18,6 +18,8 @@ export default new Vuex.Store({
   state: {
     user: null,
     isAuthenticated: false,
+    schedulingInfo: {},
+    activeStep: 0,
   },
   mutations: {
     setUser(state, user) {
@@ -29,6 +31,12 @@ export default new Vuex.Store({
       state.user = null;
       state.isAuthenticated = false;
     },
+    setSchedulingInfo(state, { service }) {
+      state.schedulingInfo = { service };
+    },
+    setActiveStep(state, step) {
+      state.activeStep = step;
+    },
   },
   getters: {
     isAuthenticated(state) {
@@ -36,6 +44,12 @@ export default new Vuex.Store({
     },
     user(state) {
       return state.user;
+    },
+    schedulingInfo(state) {
+      return state.schedulingInfo;
+    },
+    activeStep(state) {
+      return state.activeStep;
     },
   },
   plugins: [persistStatePlugin],

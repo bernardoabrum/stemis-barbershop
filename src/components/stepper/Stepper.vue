@@ -1,6 +1,6 @@
 <template>
   <div class="cmp-stepper">
-    <v-stepper v-if="activeStep" alt-labels>
+    <v-stepper alt-labels>
       <v-stepper-header>
         <v-stepper-step step="1">Passo 1</v-stepper-step>
 
@@ -19,16 +19,5 @@
 <script>
 import "./Stepper.scss";
 
-export default {
-  props: {
-    activeStep: {
-      type: Number,
-    },
-  },
-  watch: {
-    activeStep(value) {
-      console.log("Active step:", value)
-    }
-  },
-};
+export default {};
 </script>

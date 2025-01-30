@@ -2,7 +2,7 @@
   <div class="cmp-service">
     <h1>Escolha o serviço:</h1>
     <div class="service-container">
-      <div class="card-service" v-for="service in services" :key="service.id">
+      <div @click="setSelectedService(service)" class="card-service" v-for="service in services" :key="service.id">
         <img src="../../assets/corte.webp" />
         <p class="title">{{ service.name }}</p>
         <p class="price">{{ service.price.toFixed(2) }}</p>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import "./Service.scss";
 import axios from "axios";
 
@@ -25,6 +26,10 @@ export default {
     this.getServices();
   },
   methods: {
+    ...mapMutations({
+      setSchedulingInfo: "setSchedulingInfo",
+      setActiveStep: "setActiveStep"
+    }),
     async getServices() {
       try {
         const response = await axios.get("http://localhost:3000/services");
@@ -33,6 +38,11 @@ export default {
         console.error("Erro ao buscar serviços");
       }
     },
+
+    setSelectedService(service) {
+      this.setSchedulingInfo({ service });
+      this.setActiveStep(2)
+    }
   },
 };
 </script>

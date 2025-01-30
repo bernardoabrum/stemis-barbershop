@@ -30,7 +30,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = store.getters.isAuthenticated;
+  const { isAuthenticated } = store.getters;
 
   if (to.name === "Scheduling" && !isAuthenticated) {
     next("/authenticate");
