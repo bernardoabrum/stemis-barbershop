@@ -2,7 +2,12 @@
   <div class="cmp-service">
     <h1>Escolha o serviço:</h1>
     <div class="service-container">
-      <div @click="setSelectedService(service)" class="card-service" v-for="service in services" :key="service.id">
+      <div
+        @click="setSelectedService(service)"
+        class="card-service"
+        v-for="service in services"
+        :key="service.id"
+      >
         <img src="../../assets/corte.webp" />
         <p class="title">{{ service.name }}</p>
         <p class="price">{{ service.price.toFixed(2) }}</p>
@@ -28,7 +33,7 @@ export default {
   methods: {
     ...mapMutations({
       setSchedulingInfo: "setSchedulingInfo",
-      setActiveStep: "setActiveStep"
+      setActiveStep: "setActiveStep",
     }),
     async getServices() {
       try {
@@ -41,8 +46,8 @@ export default {
 
     setSelectedService(service) {
       this.setSchedulingInfo({ service });
-      this.setActiveStep(2)
-    }
+      this.setActiveStep(2);
+    },
   },
 };
 </script>

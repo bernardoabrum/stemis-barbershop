@@ -16,10 +16,14 @@ const persistStatePlugin = (store) => {
 
 export default new Vuex.Store({
   state: {
-    user: null,
+    user: undefined,
     isAuthenticated: false,
-    schedulingInfo: {},
     activeStep: 0,
+    schedulingInfo: {
+      client: undefined,
+      service: undefined,
+      barber: undefined,
+    },
   },
   mutations: {
     setUser(state, user) {
@@ -28,11 +32,14 @@ export default new Vuex.Store({
     },
 
     logout(state) {
-      state.user = null;
+      state.user = undefined;
       state.isAuthenticated = false;
     },
-    setSchedulingInfo(state, { service }) {
-      state.schedulingInfo = { service };
+    setSchedulingInfo(state, payload) {
+      state.schedulingInfo = {
+        ...state.schedulingInfo,
+        ...payload,
+      };
     },
     setActiveStep(state, step) {
       state.activeStep = step;
