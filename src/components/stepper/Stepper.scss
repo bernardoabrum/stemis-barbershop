@@ -2,5 +2,15 @@
   .v-stepper {
     width: 1000px;
     background-color: darkseagreen;
+
+    .v-stepper__step__step {
+      background-color: rgb(6, 255, 39) !important;
+    }
+
+    .active {
+      .v-stepper__step__step {
+        background-color: blue !important;
+      }
+    }
   }
 }

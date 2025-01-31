@@ -1,23 +1,42 @@
 <template>
   <div class="cmp-stepper">
+    <button @click="goBack">Voltar</button>
     <v-stepper alt-labels>
       <v-stepper-header>
-        <v-stepper-step step="1">Passo 1</v-stepper-step>
-
+        <v-stepper-step :class="{active: activeStep === 1}" step="1">Passo 1</v-stepper-step>
         <v-divider></v-divider>
-
-        <v-stepper-step step="2">Passo 2</v-stepper-step>
-
+        <v-stepper-step :class="{active: activeStep === 2}" step="2">Passo 2</v-stepper-step>
         <v-divider></v-divider>
-
-        <v-stepper-step step="3">Passo 3</v-stepper-step>
+        <v-stepper-step :class="{active: activeStep === 3}" step="3">Passo 3</v-stepper-step>
+        <v-divider></v-divider>
+        <v-stepper-step :class="{active: activeStep === 4}" step="4">Passo 3</v-stepper-step>
       </v-stepper-header>
     </v-stepper>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
 import "./Stepper.scss";
 
-export default {};
+export default {
+  computed: {
+    ...mapGetters({
+      activeStep: "activeStep",
+    }),
+  },
+  watch: {
+    activeStep(value) {
+      console.log(value)
+    }
+  },
+  methods: {
+    ...mapMutations({
+      setActiveStep: "setActiveStep"
+    }),
+    goBack() {
+      this.setActiveStep(this.activeStep - 1)
+    }
+  }
+};
 </script>
