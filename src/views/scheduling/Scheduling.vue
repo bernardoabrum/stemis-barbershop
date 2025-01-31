@@ -1,20 +1,10 @@
 <template>
   <div class="scheduling-page">
-    <div>
-      <Stepper v-if="activeStep" />
-    </div>
-    <div>
-      <Home v-if="!activeStep" />
-    </div>
-    <div>
-      <Service v-if="activeStep === 1" />
-    </div>
-    <div>
-      <Barber v-if="activeStep === 2" />
-    </div>
-    <div>
-      <Datetime v-if="activeStep === 3" />
-    </div>
+    <Stepper v-if="activeStep" />
+    <Home v-if="!activeStep" />
+    <Service v-if="activeStep === 1" />
+    <Barber v-if="activeStep === 2" />
+    <Datetime v-if="activeStep === 3" />
   </div>
 </template>
 

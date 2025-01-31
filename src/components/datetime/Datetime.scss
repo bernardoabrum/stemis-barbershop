@@ -1,0 +1,34 @@
+.cmp-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .date-picker-container {
+    margin-top: 40px;
+
+    .v-picker__title {
+      background-color: blanchedalmond;
+      color: black;
+
+      .v-date-picker-title__year {
+        font-weight: 600;
+      }
+    }
+
+    .v-picker__body {
+      width: 500px !important;
+    }
+
+    .v-btn__content {
+      font-size: 18px;
+    }
+
+    .v-btn--active {
+      color: blue !important;
+    }
+  }
+}
