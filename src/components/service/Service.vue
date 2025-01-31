@@ -45,7 +45,13 @@ export default {
     },
 
     setSelectedService(service) {
-      this.setSchedulingInfo({ service });
+      this.setSchedulingInfo({
+        service: {
+          name: service.name,
+          price: service.price,
+          duration: service.duration,
+        },
+      });
       this.setActiveStep(2);
     },
   },

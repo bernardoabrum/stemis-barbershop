@@ -2,28 +2,15 @@
   "users": [
     {
       "id": "1",
-      "name": "José",
-      "email": "jose@teste",
-      "password": "123123",
-      "isBarber": true
-    },
-    {
-      "id": "2",
       "name": "João",
       "email": "joao@teste",
       "password": "123123",
       "isBarber": true
     },
     {
-      "id": "3",
+      "id": "fdf2",
       "name": "Bernardo",
       "email": "bernardo@teste",
-      "password": "123123"
-    },
-    {
-      "id": "4",
-      "name": "Maria",
-      "email": "maria@teste",
       "password": "123123"
     }
   ],
@@ -31,23 +18,28 @@
     {
       "id": "1",
       "name": "Corte",
-      "price": 30.0
+      "price": 30,
+      "duration": "00:30"
     },
     {
       "id": "2",
       "name": "Barba",
-      "price": 25.0
+      "price": 25,
+      "duration": "00:30"
     },
     {
       "id": "3",
       "name": "Corte + Barba",
-      "price": 50.0
+      "price": 50,
+      "duration": "01:00"
     },
     {
       "id": "4",
       "name": "Sobrancelha",
-      "price": 10.0
+      "price": 10,
+      "duration": "00:10"
     }
   ],
-  "schedulings": []
+  "schedulings": [
+  ]
 }

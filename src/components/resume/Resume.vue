@@ -1,0 +1,49 @@
+<template>
+  <div class="cmp-resume">
+    <div class="resume-container" v-if="schedulingInfo">
+      <p>Cliente: {{ schedulingInfo.client }}</p>
+      <p>Barbeiro: {{ schedulingInfo.barber }}</p>
+      <p>Data: {{ formatDate(schedulingInfo.date) }}</p>
+      <p>Horário: {{ schedulingInfo.time }}</p>
+      <p>Serviço: {{ schedulingInfo.service.name }}</p>
+      <p>Preço: R${{ schedulingInfo.service.price.toFixed(2) }}</p>
+    </div>
+    <v-btn @click="sendScheduling">Confirmar agendamento</v-btn>
+  </div>
+</template>
+
+<script>
+import "./Resume.scss";
+import axios from "axios";
+import { mapGetters, mapMutations } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      schedulingInfo: "schedulingInfo",
+    }),
+  },
+  methods: {
+    ...mapMutations({
+      setActiveStep: "setActiveStep",
+    }),
+    formatDate(date) {
+      if (!date) return "";
+      const [year, month, day] = date.split("-");
+      return `${day}/${month}/${year}`;
+    },
+    async sendScheduling() {
+      try {
+        await axios.post(
+          "http://localhost:3000/schedulings",
+          this.schedulingInfo
+        );
+        alert("Agendado com sucesso!");
+        this.setActiveStep(0);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+};
+</script>

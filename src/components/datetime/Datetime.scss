@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin-bottom: 80px;
 
   h1 {
     font-size: 24px;
+    margin-bottom: 30px;
   }
 
   .date-picker-container {
     margin-top: 40px;
+    width: 600px;
 
     .v-picker__title {
       background-color: blanchedalmond;
@@ -20,7 +24,7 @@
     }
 
     .v-picker__body {
-      width: 500px !important;
+      width: 100% !important;
     }
 
     .v-btn__content {
@@ -30,5 +34,40 @@
     .v-btn--active {
       color: blue !important;
     }
+  }
+
+  .time-picker-container {
+    margin-top: 20px;
+
+    .time-list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 600px;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .time-item {
+      font-size: 18px;
+      padding: 15px 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      transition: 0.3s;
+    }
+
+    .time-item:hover {
+      background-color: #ddd;
+    }
+
+    .time-item.selected {
+      background-color: #007bff;
+      color: white;
+    }
+  }
+
+  .button-container {
+    margin-top: 60px;
   }
 }

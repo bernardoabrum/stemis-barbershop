@@ -19,11 +19,7 @@ export default new Vuex.Store({
     user: undefined,
     isAuthenticated: false,
     activeStep: 0,
-    schedulingInfo: {
-      client: undefined,
-      service: undefined,
-      barber: undefined,
-    },
+    schedulingInfo: {},
   },
   mutations: {
     setUser(state, user) {

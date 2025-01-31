@@ -43,13 +43,7 @@ export default {
         if (user) {
           this.$store.commit("setUser", user);
           this.$router.push("/scheduling");
-          this.setSchedulingInfo({
-            client: {
-              id: user.id,
-              name: user.name,
-              email: user.email,
-            },
-          });
+          this.setSchedulingInfo({ client: user.name });
         } else {
           alert("Usuário não encontrado!");
         }
