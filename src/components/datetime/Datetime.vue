@@ -7,7 +7,7 @@
         v-model="selectedDate"
         :min="minDate"
         :max="maxDate"
-        :allowed-dates="allowedDates"
+        :allowed-dates="disableSunday"
       />
     </div>
     <div v-if="selectedDate" class="time-picker-container">
@@ -76,7 +76,7 @@ export default {
     formatDate(date) {
       return date.toISOString().split("T")[0];
     },
-    allowedDates(date) {
+    disableSunday(date) {
       const parsedDate = new Date(date + "T00:00:00");
       return parsedDate.getDay() !== 0;
     },
@@ -87,10 +87,16 @@ export default {
 
         const busyTimes = schedulings
           .filter((scheduling) => scheduling.date === this.selectedDate)
-          .map((scheduling) => ({
-            time: scheduling.time,
-            duration: scheduling.service.duration,
-          }));
+          .map((scheduling) => {
+            const startMinutes = this.convertToMinutes(scheduling.time);
+            const endMinutes =
+              startMinutes + this.convertToMinutes(scheduling.service.duration);
+
+            return {
+              start: this.convertToHours(startMinutes),
+              end: this.convertToHours(endMinutes),
+            };
+          });
 
         this.busyTimes = busyTimes;
         this.generateTimes();
@@ -110,7 +116,6 @@ export default {
         remainingMinutes
       ).padStart(2, "0")}`;
     },
-
     generateTimes() {
       const { duration } = this.schedulingInfo.service;
       const start = this.convertToMinutes("08:00");
@@ -119,22 +124,21 @@ export default {
 
       let times = [];
       let currentTime = start;
-      const endTime = end;
 
-      while (currentTime < endTime) {
-        const busy = this.busyTimes.find(
-          (busy) => this.convertToMinutes(busy.time) === currentTime
+      while (currentTime + interval <= end) {
+        const isBusy = this.busyTimes.some(
+          (busyTime) =>
+            (currentTime >= this.convertToMinutes(busyTime.start) &&
+              currentTime < this.convertToMinutes(busyTime.end)) ||
+            (currentTime + interval > this.convertToMinutes(busyTime.start) &&
+              currentTime + interval <= this.convertToMinutes(busyTime.end))
         );
 
-        if (busy) {
-          currentTime =
-            this.convertToMinutes(busy.time) +
-            this.convertToMinutes(busy.duration);
-        } else {
+        if (!isBusy) {
           times.push(this.convertToHours(currentTime));
-
-          currentTime += interval;
         }
+
+        currentTime += interval;
       }
 
       this.availableTimes = times;

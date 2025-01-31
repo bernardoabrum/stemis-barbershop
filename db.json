@@ -32,14 +32,7 @@
       "name": "Corte + Barba",
       "price": 50,
       "duration": "01:00"
-    },
-    {
-      "id": "4",
-      "name": "Sobrancelha",
-      "price": 10,
-      "duration": "00:10"
     }
   ],
-  "schedulings": [
-  ]
+  "schedulings": []
 }

@@ -7,16 +7,28 @@
 
 <script>
 import "./Home.scss";
-import { mapMutations } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   methods: {
     ...mapMutations({
       setActiveStep: "setActiveStep",
+      setSchedulingInfo: "setSchedulingInfo",
     }),
     serviceStep() {
       this.setActiveStep(1);
+      this.setSchedulingInfo({
+        client: {
+          id: this.user.id,
+          name: this.user.name,
+        },
+      });
     },
+  },
+  computed: {
+    ...mapGetters({
+      user: "user",
+    }),
   },
 };
 </script>

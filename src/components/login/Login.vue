@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
 import "./Login.scss";
 import axios from "axios";
 
@@ -22,10 +21,6 @@ export default {
     };
   },
   methods: {
-    ...mapMutations({
-      setSchedulingInfo: "setSchedulingInfo",
-    }),
-
     async loginUser() {
       if (!this.email || !this.password) {
         alert("Preencha todos os campos!");
@@ -43,10 +38,6 @@ export default {
         if (user) {
           this.$store.commit("setUser", user);
           this.$router.push("/scheduling");
-          this.setSchedulingInfo({ client: {
-            id: user.id,
-            name: user.name,
-          } });
         } else {
           alert("Usuário não encontrado!");
         }

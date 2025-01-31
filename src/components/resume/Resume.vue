@@ -26,6 +26,7 @@ export default {
   methods: {
     ...mapMutations({
       setActiveStep: "setActiveStep",
+      clearSchedulingInfo: "clearSchedulingInfo",
     }),
     formatDate(date) {
       if (!date) return "";
@@ -39,6 +40,7 @@ export default {
           this.schedulingInfo
         );
         alert("Agendado com sucesso!");
+        this.clearSchedulingInfo();
         this.setActiveStep(0);
       } catch (error) {
         console.error(error);
