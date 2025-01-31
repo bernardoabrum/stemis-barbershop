@@ -3,15 +3,14 @@
     <h1>Escolha o barbeiro:</h1>
     <div class="barber-container">
       <div
-        @click="setSelectedBarber(barber.name)"
+        @click="setSelectedBarber(barber)"
         class="card-barber"
         v-for="barber in barbers"
         :key="barber.id"
       >
-        <img src="../../assets/barba.jpg" alt="">
+        <img src="../../assets/barba.jpg" alt="" />
         <p>{{ barber.name }}</p>
       </div>
-
     </div>
   </div>
 </template>
@@ -46,7 +45,12 @@ export default {
     },
 
     setSelectedBarber(barber) {
-      this.setSchedulingInfo({ barber });
+      this.setSchedulingInfo({
+        barber: {
+          id: barber.id,
+          name: barber.name,
+        },
+      });
       this.setActiveStep(3);
     },
   },

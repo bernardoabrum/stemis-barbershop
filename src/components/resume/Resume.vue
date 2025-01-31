@@ -1,8 +1,8 @@
 <template>
   <div class="cmp-resume">
     <div class="resume-container" v-if="schedulingInfo">
-      <p>Cliente: {{ schedulingInfo.client }}</p>
-      <p>Barbeiro: {{ schedulingInfo.barber }}</p>
+      <p>Cliente: {{ schedulingInfo.client.name }}</p>
+      <p>Barbeiro: {{ schedulingInfo.barber.name }}</p>
       <p>Data: {{ formatDate(schedulingInfo.date) }}</p>
       <p>Horário: {{ schedulingInfo.time }}</p>
       <p>Serviço: {{ schedulingInfo.service.name }}</p>
