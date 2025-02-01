@@ -51,7 +51,7 @@ export default {
           name: barber.name,
         },
       });
-      this.setActiveStep(3);
+      this.setActiveStep(2);
     },
   },
 };

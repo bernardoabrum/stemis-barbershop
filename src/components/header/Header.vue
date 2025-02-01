@@ -8,7 +8,7 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import "./Header.scss"
+import "./Header.scss";
 
 export default {
   computed: {
@@ -21,12 +21,12 @@ export default {
     ...mapMutations({
       logoutUser: "logout",
       clearSchedulingInfo: "clearSchedulingInfo",
-      setActiveStep: "setActiveStep"
+      setActiveStep: "setActiveStep",
     }),
     handleLogout() {
       this.logoutUser();
-      this.clearSchedulingInfo()
-      this.setActiveStep(0)
+      this.clearSchedulingInfo();
+      this.setActiveStep(0);
       this.$router.push("/authenticate");
     },
   },

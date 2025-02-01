@@ -152,7 +152,7 @@ export default {
       }, 100);
     },
     nextStep() {
-      this.setActiveStep(4);
+      this.setActiveStep(3);
     },
   },
 };

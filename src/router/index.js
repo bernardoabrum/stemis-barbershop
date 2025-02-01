@@ -5,6 +5,7 @@ import store from "@/store";
 import Home from "../views/home/Home.vue";
 import Authenticate from "../views/authenticate/Authenticate.vue";
 import MySchedulings from "../views/my-schedulings/MySchedulings.vue";
+import Scheduling from "../views/scheduling/Scheduling.vue";
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ const routes = [
     path: "/home",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/scheduling",
+    name: "Scheduling",
+    component: Scheduling,
   },
   {
     path: "/my-schedulings",

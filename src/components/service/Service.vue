@@ -52,7 +52,7 @@ export default {
           duration: service.duration,
         },
       });
-      this.setActiveStep(2);
+      this.setActiveStep(1);
     },
   },
 };

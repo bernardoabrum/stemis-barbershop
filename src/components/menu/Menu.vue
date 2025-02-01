@@ -1,6 +1,6 @@
 <template>
   <div class="cmp-menu">
-    <v-btn outlined @click="serviceStep">Reservar horário</v-btn>
+    <v-btn outlined @click="scheduling">Reservar horário</v-btn>
     <v-btn outlined @click="mySchedulings">Meus agendamentos</v-btn>
   </div>
 </template>
@@ -17,11 +17,12 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setActiveStep: "setActiveStep",
       setSchedulingInfo: "setSchedulingInfo",
+      setActiveStep: "setActiveStep",
     }),
-    serviceStep() {
-      this.setActiveStep(1);
+    scheduling() {
+      this.$router.push("/scheduling");
+      this.setActiveStep(0);
       this.setSchedulingInfo({
         client: {
           id: this.user.id,
