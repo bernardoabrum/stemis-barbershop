@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "name": "Admin",
+      "name": "Barbeiro 1",
       "email": "admin",
       "password": "admin",
       "isBarber": true
@@ -11,6 +11,12 @@
       "id": "fdf2",
       "name": "Bernardo",
       "email": "bernardo@teste",
+      "password": "123123"
+    },
+    {
+      "id": "0774",
+      "name": "João",
+      "email": "joao@teste",
       "password": "123123"
     }
   ],
@@ -40,5 +46,78 @@
       "duration": "00:10"
     }
   ],
-  "schedulings": []
+  "schedulings": [
+    {
+      "id": "fe84",
+      "client": {
+        "id": "fdf2",
+        "name": "Bernardo"
+      },
+      "service": {
+        "name": "Corte",
+        "price": 30,
+        "duration": "00:30"
+      },
+      "barber": {
+        "id": "1",
+        "name": "Barbeiro 1"
+      },
+      "date": "2025-02-12",
+      "time": "12:30"
+    },
+    {
+      "id": "2",
+      "client": {
+        "id": "fdf2",
+        "name": "Bernardo"
+      },
+      "service": {
+        "name": "Corte",
+        "price": 30,
+        "duration": "00:30"
+      },
+      "barber": {
+        "id": "1",
+        "name": "Barbeiro 1"
+      },
+      "date": "2025-02-13",
+      "time": "17:00"
+    },
+    {
+      "id": "3",
+      "client": {
+        "id": "fdf2",
+        "name": "Bernardo"
+      },
+      "service": {
+        "name": "Corte",
+        "price": 30,
+        "duration": "00:30"
+      },
+      "barber": {
+        "id": "1",
+        "name": "Barbeiro 1"
+      },
+      "date": "2025-02-10",
+      "time": "12:30"
+    },
+    {
+      "id": "4",
+      "client": {
+        "id": "fdf2",
+        "name": "Bernardo"
+      },
+      "service": {
+        "name": "Corte",
+        "price": 30,
+        "duration": "00:30"
+      },
+      "barber": {
+        "id": "1",
+        "name": "Barbeiro 1"
+      },
+      "date": "2025-02-10",
+      "time": "10:30"
+    }
+  ]
 }

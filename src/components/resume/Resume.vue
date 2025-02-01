@@ -42,6 +42,7 @@ export default {
         alert("Agendado com sucesso!");
         this.clearSchedulingInfo();
         this.setActiveStep(0);
+        this.$router.push("/home");
       } catch (error) {
         console.error(error);
       }

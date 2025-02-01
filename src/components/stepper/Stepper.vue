@@ -1,5 +1,6 @@
 <template>
   <div class="cmp-stepper">
+    <button @click="goBack">Voltar</button>
     <v-stepper alt-labels>
       <v-stepper-header>
         <v-stepper-step :class="{ active: activeStep === 0 }" step="1"
@@ -36,6 +37,13 @@ export default {
     ...mapMutations({
       setActiveStep: "setActiveStep",
     }),
+    goBack() {
+      if ((this.activeStep === 0)) {
+        this.$router.push("/home");
+      } else {
+        this.setActiveStep(this.activeStep - 1);
+      }
+    },
   },
 };
 </script>
