@@ -2,7 +2,7 @@
   <div class="cmp-header">
     <span v-if="authenticated">Bem vindo {{ userInfo.name }}!</span>
     <span v-else>Não autenticado</span>
-    <button v-if="authenticated" @click="handleLogout">Sair</button>
+    <button v-if="authenticated" @click="handleLogout">Desconectar</button>
   </div>
 </template>
 

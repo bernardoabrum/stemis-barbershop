@@ -4,8 +4,9 @@ import store from "@/store";
 
 import Home from "../views/home/Home.vue";
 import Authenticate from "../views/authenticate/Authenticate.vue";
-import MySchedulings from "../views/my-schedulings/MySchedulings.vue";
 import Scheduling from "../views/scheduling/Scheduling.vue";
+import UserSchedulings from "../views/user-schedulings/UserSchedulings.vue";
+import BarberSchedulings from "../views/barber-schedulings/BarberSchedulings.vue";
 
 Vue.use(Router);
 
@@ -30,9 +31,14 @@ const routes = [
     component: Scheduling,
   },
   {
-    path: "/my-schedulings",
-    name: "MySchedulings",
-    component: MySchedulings,
+    path: "/user-schedulings",
+    name: "UserSchedulings",
+    component: UserSchedulings,
+  },
+  {
+    path: "/barber-schedulings",
+    name: "BarberSchedulings",
+    component: BarberSchedulings,
   },
 ];
 

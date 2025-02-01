@@ -1,7 +1,14 @@
 <template>
   <div class="cmp-menu">
-    <v-btn outlined @click="scheduling">Reservar horário</v-btn>
-    <v-btn outlined @click="mySchedulings">Meus agendamentos</v-btn>
+    <div v-if="!isBarber" class="user-menu">
+      <v-btn outlined @click="scheduling">Reservar horário</v-btn>
+      <v-btn outlined @click="userchedulings">Meus agendamentos</v-btn>
+    </div>
+    <div v-else class="barber-menu">
+      <p></p>
+      <v-btn outlined @click="barberSchedulings">Ver Meus agendamentos</v-btn>
+      <v-btn outlined>Meu serviços</v-btn>
+    </div>
   </div>
 </template>
 
@@ -14,6 +21,10 @@ export default {
     ...mapGetters({
       user: "user",
     }),
+
+    isBarber() {
+      return this.user.isBarber;
+    },
   },
   methods: {
     ...mapMutations({
@@ -30,8 +41,11 @@ export default {
         },
       });
     },
-    mySchedulings() {
-      this.$router.push("/my-schedulings");
+    userchedulings() {
+      this.$router.push("/user-schedulings");
+    },
+    barberSchedulings() {
+      this.$router.push("/barber-schedulings");
     },
   },
 };

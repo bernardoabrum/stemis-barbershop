@@ -1,5 +1,5 @@
 <template>
-  <div class="my-schedulings-page">
+  <div class="barber-schedulings-page">
     <h1>Meus agendamentos</h1>
     <table class="table">
       <thead>
@@ -7,7 +7,7 @@
           <th>Serviço</th>
           <th>Data</th>
           <th>Hora</th>
-          <th>Barbeiro</th>
+          <th>Cliente</th>
           <th>Preço</th>
         </tr>
       </thead>
@@ -16,7 +16,7 @@
           <td>{{ scheduling.service.name }}</td>
           <td>{{ formatDate(scheduling.date) }}</td>
           <td>{{ scheduling.time }}</td>
-          <td>{{ scheduling.barber.name }}</td>
+          <td>{{ scheduling.client.name }}</td>
           <td>R${{ scheduling.service.price.toFixed(2) }}</td>
         </tr>
       </tbody>
@@ -25,8 +25,8 @@
 </template>
 
 <script>
+import "./BarberSchedulings.scss";
 import { mapGetters } from "vuex";
-import "./MySchedulings.scss";
 import axios from "axios";
 
 export default {
@@ -41,18 +41,18 @@ export default {
     }),
   },
   mounted() {
-    this.getMySchedulings();
+    this.getBarberSchedulings();
   },
   methods: {
-    async getMySchedulings() {
+    async getBarberSchedulings() {
       try {
         const response = await axios.get("http://localhost:3000/schedulings");
-        const userID = this.user.id;
-        const userSchedulings = response.data.filter(
-          (scheduling) => scheduling.client.id === userID
+        const barberID = this.user.id;
+        const barberSchedulingsSchedulings = response.data.filter(
+          (scheduling) => scheduling.barber.id === barberID
         );
 
-        this.schedulings = userSchedulings.sort((a, b) => {
+        this.schedulings = barberSchedulingsSchedulings.sort((a, b) => {
           const dateComparison = new Date(a.date) - new Date(b.date);
           if (dateComparison !== 0) return dateComparison;
 

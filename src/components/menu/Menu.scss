@@ -1,6 +1,15 @@
 .cmp-menu {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  gap: 20px;
+  .user-menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+  }
+
+  .barber-menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+  }
 }
