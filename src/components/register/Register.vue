@@ -29,15 +29,26 @@ export default {
         return;
       }
 
-      const newUser = {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-      };
-
       try {
+        const response = await axios.get("http://localhost:3000/users");
+        const existingUser = response.data.find(
+          (user) => user.email === this.email
+        );
+
+        if (existingUser) {
+          alert("E-mail já cadastrado!");
+          return;
+        }
+
+        const newUser = {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+        };
+
         await axios.post("http://localhost:3000/users", newUser);
-        alert("Usuário registrado!");
+        alert("Usuário registrado com sucesso!");
+
         this.name = "";
         this.email = "";
         this.password = "";
