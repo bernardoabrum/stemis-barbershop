@@ -25,11 +25,6 @@ export default {
       activeStep: "activeStep",
     }),
   },
-  watch: {
-    activeStep(value) {
-      console.log(value)
-    }
-  },
   methods: {
     ...mapMutations({
       setActiveStep: "setActiveStep"

@@ -1,7 +1,7 @@
 <template>
-  <div class="scheduling-page">
+  <div class="home-page">
     <Stepper v-if="activeStep" />
-    <Home v-if="!activeStep" />
+    <Menu v-if="!activeStep" />
     <Service v-if="activeStep === 1" />
     <Barber v-if="activeStep === 2" />
     <Datetime v-if="activeStep === 3" />
@@ -10,14 +10,14 @@
 </template>
 
 <script>
-import "./Scheduling.scss";
+import "./Home.scss";
 import { mapGetters } from "vuex";
 import Stepper from "@/components/stepper/Stepper.vue";
-import Home from "@/components/home/Home.vue";
+import Menu from "@/components/menu/Menu.vue";
 import Service from "@/components/service/Service.vue";
 import Barber from "@/components/barber/Barber.vue";
 import Datetime from "@/components/datetime/Datetime.vue";
-import Resume from "@/components/resume/Resume.vue"
+import Resume from "@/components/resume/Resume.vue";
 
 export default {
   computed: {
@@ -27,7 +27,7 @@ export default {
   },
   components: {
     Stepper,
-    Home,
+    Menu,
     Service,
     Barber,
     Datetime,

@@ -1,15 +1,20 @@
 <template>
-  <div class="cmp-home">
+  <div class="cmp-menu">
     <v-btn outlined @click="serviceStep">Reservar horário</v-btn>
-    <v-btn outlined>Meus agendamentos</v-btn>
+    <v-btn outlined @click="mySchedulings">Meus agendamentos</v-btn>
   </div>
 </template>
 
 <script>
-import "./Home.scss";
+import "./Menu.scss";
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
+  computed: {
+    ...mapGetters({
+      user: "user",
+    }),
+  },
   methods: {
     ...mapMutations({
       setActiveStep: "setActiveStep",
@@ -24,11 +29,9 @@ export default {
         },
       });
     },
-  },
-  computed: {
-    ...mapGetters({
-      user: "user",
-    }),
+    mySchedulings() {
+      this.$router.push("/my-schedulings");
+    },
   },
 };
 </script>
