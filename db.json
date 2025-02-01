@@ -8,13 +8,13 @@
       "isBarber": true
     },
     {
-      "id": "fdf2",
-      "name": "Bernardo",
-      "email": "bernardo@teste",
-      "password": "123123"
+      "id": "2",
+      "name": "Cliente 1",
+      "email": "user",
+      "password": "user"
     },
     {
-      "id": "0774",
+      "id": "3",
       "name": "João",
       "email": "joao@teste",
       "password": "123123"
@@ -48,10 +48,10 @@
   ],
   "schedulings": [
     {
-      "id": "fe84",
+      "id": "1",
       "client": {
-        "id": "fdf2",
-        "name": "Bernardo"
+        "id": "2",
+        "name": "Cliente 1"
       },
       "service": {
         "name": "Corte",
@@ -68,8 +68,8 @@
     {
       "id": "2",
       "client": {
-        "id": "fdf2",
-        "name": "Bernardo"
+        "id": "2",
+        "name": "Cliente 1"
       },
       "service": {
         "name": "Corte",
@@ -86,8 +86,8 @@
     {
       "id": "3",
       "client": {
-        "id": "fdf2",
-        "name": "Bernardo"
+        "id": "3",
+        "name": "João"
       },
       "service": {
         "name": "Corte",
@@ -104,7 +104,7 @@
     {
       "id": "4",
       "client": {
-        "id": "asd",
+        "id": "3",
         "name": "João"
       },
       "service": {

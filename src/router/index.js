@@ -7,6 +7,7 @@ import Authenticate from "../views/authenticate/Authenticate.vue";
 import Scheduling from "../views/scheduling/Scheduling.vue";
 import UserSchedulings from "../views/user-schedulings/UserSchedulings.vue";
 import BarberSchedulings from "../views/barber-schedulings/BarberSchedulings.vue";
+import ServicesList from "../views/services-list/ServicesList.vue"
 
 Vue.use(Router);
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/barber-schedulings",
     name: "BarberSchedulings",
     component: BarberSchedulings,
+  },
+  {
+    path: "/services-list",
+    name: "ServicesList",
+    component: ServicesList,
   },
 ];
 

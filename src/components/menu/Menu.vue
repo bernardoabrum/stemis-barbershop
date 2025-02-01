@@ -7,7 +7,7 @@
     <div v-else class="barber-menu">
       <p></p>
       <v-btn outlined @click="barberSchedulings">Ver Meus agendamentos</v-btn>
-      <v-btn outlined>Meu serviços</v-btn>
+      <v-btn outlined @click="servicesList">Meu serviços</v-btn>
     </div>
   </div>
 </template>
@@ -47,6 +47,9 @@ export default {
     barberSchedulings() {
       this.$router.push("/barber-schedulings");
     },
+    servicesList() {
+      this.$router.push("/services-list")
+    }
   },
 };
 </script>
