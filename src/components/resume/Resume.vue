@@ -8,7 +8,7 @@
       <p>Serviço: {{ schedulingInfo.service.name }}</p>
       <p>Preço: R${{ schedulingInfo.service.price.toFixed(2) }}</p>
     </div>
-    <v-btn @click="sendScheduling">Confirmar agendamento</v-btn>
+    <v-btn outlined @click="sendScheduling">Confirmar agendamento</v-btn>
   </div>
 </template>
 
