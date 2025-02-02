@@ -4,19 +4,19 @@
     <v-stepper alt-labels>
       <v-stepper-header>
         <v-stepper-step :class="{ active: activeStep === 0 }" step="1"
-          >Passo 1</v-stepper-step
+          >Serviço</v-stepper-step
         >
         <v-divider></v-divider>
         <v-stepper-step :class="{ active: activeStep === 1 }" step="2"
-          >Passo 2</v-stepper-step
+          >Barbeiro</v-stepper-step
         >
         <v-divider></v-divider>
         <v-stepper-step :class="{ active: activeStep === 2 }" step="3"
-          >Passo 3</v-stepper-step
+          >Data</v-stepper-step
         >
         <v-divider></v-divider>
         <v-stepper-step :class="{ active: activeStep === 3 }" step="4"
-          >Passo 3</v-stepper-step
+          >Resumo</v-stepper-step
         >
       </v-stepper-header>
     </v-stepper>
@@ -38,7 +38,7 @@ export default {
       setActiveStep: "setActiveStep",
     }),
     goBack() {
-      if ((this.activeStep === 0)) {
+      if (this.activeStep === 0) {
         this.$router.push("/home");
       } else {
         this.setActiveStep(this.activeStep - 1);

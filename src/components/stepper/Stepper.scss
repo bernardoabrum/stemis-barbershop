@@ -1,15 +1,39 @@
 .cmp-stepper {
+  width: 100vw;
+  max-width: 1000px;
+  padding: 0 60px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+
+  button {
+    margin: 24px 0 0 0;
+  }
+
   .v-stepper {
-    width: 1000px;
-    background-color: darkseagreen;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none !important;
+
+    &__header {
+      box-shadow: none;
+      flex-wrap: nowrap;
+    }
+
+    .v-stepper__step {
+      flex-basis: 120px;
+    }
 
     .v-stepper__step__step {
-      background-color: rgb(6, 255, 39) !important;
+      background-color: black !important;
     }
 
     .active {
       .v-stepper__step__step {
-        background-color: blue !important;
+        background-color: white !important;
+        color: #3a001b;
+        border: solid 1px #3a001b;
       }
     }
   }

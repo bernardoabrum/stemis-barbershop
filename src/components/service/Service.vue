@@ -8,9 +8,9 @@
         v-for="service in services"
         :key="service.id"
       >
-        <img src="../../assets/corte.webp" />
-        <p class="title">{{ service.name }}</p>
-        <p class="price">{{ service.price.toFixed(2) }}</p>
+        <p class="name">Tipo: {{ service.name }}</p>
+        <p class="price">Preço: {{ service.price.toFixed(2) }}</p>
+        <p class="duration">Duração: {{ service.duration }}:00</p>
       </div>
     </div>
   </div>
