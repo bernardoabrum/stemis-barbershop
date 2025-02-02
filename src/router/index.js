@@ -8,6 +8,7 @@ import Scheduling from "../views/scheduling/Scheduling.vue";
 import UserSchedulings from "../views/user-schedulings/UserSchedulings.vue";
 import BarberSchedulings from "../views/barber-schedulings/BarberSchedulings.vue";
 import ServicesList from "../views/services-list/ServicesList.vue";
+import Error from "../views/error/Error.vue";
 
 Vue.use(Router);
 
@@ -45,6 +46,15 @@ const routes = [
     path: "/services-list",
     name: "ServicesList",
     component: ServicesList,
+  },
+  {
+    path: "/error",
+    name: "Error",
+    component: Error,
+  },
+  {
+    path: "*",
+    redirect: "/error",
   },
 ];
 
