@@ -59,6 +59,24 @@
       },
       "date": "2025-02-27",
       "time": "08:00"
+    },
+    {
+      "id": "e8e7",
+      "client": {
+        "id": "46e6",
+        "name": "Bernardo"
+      },
+      "service": {
+        "name": "Barba",
+        "price": 25,
+        "duration": "00:30"
+      },
+      "barber": {
+        "id": "1",
+        "name": "João (Barbeiro)"
+      },
+      "date": "2025-02-14",
+      "time": "17:00"
     }
   ]
 }

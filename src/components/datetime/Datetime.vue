@@ -147,8 +147,10 @@ export default {
       this.selectedTime = value;
       this.setSchedulingInfo({ time: value });
       setTimeout(() => {
-        const buttonContainer = document.querySelector(".button-container");
-        buttonContainer.scrollIntoView({ behavior: "smooth" });
+        window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
       }, 100);
     },
     nextStep() {

@@ -1,5 +1,8 @@
 <template>
   <div class="barber-schedulings-page">
+    <div class="button-container">
+      <button @click="goBack">Voltar</button>
+    </div>
     <h1>Meus agendamentos</h1>
     <div v-if="schedulings.length" class="table-container">
       <table class="table">
@@ -69,6 +72,9 @@ export default {
       if (!date) return "";
       const [year, month, day] = date.split("-");
       return `${day}/${month}/${year}`;
+    },
+    goBack() {
+      this.$router.push("/home");
     },
   },
 };

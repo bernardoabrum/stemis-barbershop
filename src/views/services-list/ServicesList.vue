@@ -1,5 +1,8 @@
 <template>
   <div class="services-list-page">
+    <div class="button-container">
+      <button @click="goBack">Voltar</button>
+    </div>
     <div class="add-service">
       <v-text-field v-model="name" outlined placeholder="Nome" />
       <v-text-field
@@ -84,6 +87,9 @@ export default {
           console.error("Erro ao adicionar serviço:", error);
         }
       }
+    },
+    goBack() {
+      this.$router.push("/home");
     },
   },
 };

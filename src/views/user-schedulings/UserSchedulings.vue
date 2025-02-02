@@ -1,5 +1,8 @@
 <template>
   <div class="user-schedulings-page">
+    <div class="button-container">
+      <button @click="goBack">Voltar</button>
+    </div>
     <h1>Meus agendamentos</h1>
     <div v-if="schedulings.length" class="table-container">
       <table class="table">
@@ -84,6 +87,9 @@ export default {
       } catch (error) {
         console.error(error);
       }
+    },
+    goBack() {
+      this.$router.push("/home");
     },
   },
 };
