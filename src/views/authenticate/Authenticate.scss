@@ -1,6 +1,15 @@
 .authenticate-page {
-  .container-login {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px;
+  gap: 80px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 500px) {
+    padding: 60px 20px;
   }
 }

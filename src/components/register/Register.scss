@@ -2,12 +2,19 @@
   .form {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 400px;
     gap: 20px;
 
-    input {
-      border: solid 1px black;
-      outline: none;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .v-input__slot {
+      margin: 0;
+    }
+
+    .v-text-field__details {
+      display: none;
     }
   }
 }

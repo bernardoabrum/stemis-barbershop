@@ -1,11 +1,15 @@
 .cmp-header {
   display: flex;
-  background-color: antiquewhite;
+  background-color: #3a001b;
   justify-content: space-between;
+  align-items: center;
   height: 90px;
+  width: 100%;
 
   span {
+    padding: 0 60px;
     font-size: 24px;
+    color: white;
   }
 
   button {

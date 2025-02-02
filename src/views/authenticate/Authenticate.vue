@@ -1,10 +1,7 @@
 <template>
   <div class="authenticate-page">
-    <h1>Authenticate Page</h1>
-    <div class="container-login">
-      <Login />
-      <Register />
-    </div>
+    <Login />
+    <Register />
   </div>
 </template>
 

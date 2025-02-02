@@ -1,10 +1,15 @@
 <template>
   <div class="cmp-login">
-    <p>Login</p>
     <div class="form">
-      <input v-model="email" placeholder="Email" type="email" />
-      <input v-model="password" placeholder="Senha" type="password" />
-      <button @click="loginUser">Entrar</button>
+      <p>Caso você já possua uma conta...</p>
+      <v-text-field outlined v-model="email" placeholder="Email" type="email" />
+      <v-text-field
+        outlined
+        v-model="password"
+        placeholder="Senha"
+        type="password"
+      />
+      <v-btn outlined @click="loginUser">Entrar</v-btn>
     </div>
   </div>
 </template>

@@ -1,11 +1,16 @@
 <template>
   <div class="cmp-register">
-    <p>Register</p>
     <div class="form">
-      <input v-model="name" placeholder="Nome" />
-      <input v-model="email" placeholder="Email" />
-      <input v-model="password" placeholder="Senha" type="password" />
-      <button @click="registerUser">Registrar</button>
+      <p>Ou então, crie uma agora!</p>
+      <v-text-field outlined v-model="name" placeholder="Nome" />
+      <v-text-field outlined v-model="email" placeholder="Email" />
+      <v-text-field
+        outlined
+        v-model="password"
+        placeholder="Senha"
+        type="password"
+      />
+      <v-btn outlined @click="registerUser">Registrar</v-btn>
     </div>
   </div>
 </template>

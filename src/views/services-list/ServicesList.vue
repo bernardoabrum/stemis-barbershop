@@ -4,14 +4,13 @@
       <v-text-field v-model="name" outlined placeholder="Nome" />
       <v-text-field
         v-model="price"
-        pattern="[0-9]"
+        v-mask="'####'"
         outlined
         placeholder="Preço"
       />
       <v-text-field
         v-model="duration"
         v-mask="'##:##'"
-        pattern="[0-9]{4}"
         outlined
         placeholder="Duração"
       />
