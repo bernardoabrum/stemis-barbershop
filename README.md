@@ -1,24 +1,23 @@
-# stemis-application
+# Barbearia Stemis
 
-## Project setup
+## Após baixar o zip do projeto e estar no diretório "stemis-application", instale as dependências do projeto:
+### (garanta que você tem o node instalado para poder usar o comando "npm")
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Acesse a url do vercel onde a aplicação está hospedada, pode ser qualquer uma destas:
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+https://stemis-application.vercel.app/authenticate
+https://stemis-application-bernardo-brums-projects.vercel.app/
+https://stemis-application-bernardoabrum-bernardo-brums-projects.vercel.app/
 ```
 
-### Lints and fixes files
+### O banco de dados é local pelo json-server, você precisa dele rodando para poder acessar:
+#### (as url's estão configuradas na porta 3000)
 ```
-npm run lint
+json-server --watch db.json --port 3000
+
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Agora, você pode criar ou acessar uma conta pelo Vercel, lembrando que deixei uma conta com permissão de barbeiro (email: admin, senha: admin), para após ter alguns agendamentos como cliente, possa acessar, e manipular informações como os serviços.
