@@ -6,13 +6,6 @@
 npm install
 ```
 
-### Acesse a url do vercel onde a aplicação está hospedada, pode ser qualquer uma destas:
-```
-https://stemis-application.vercel.app/authenticate
-https://stemis-application-bernardo-brums-projects.vercel.app/
-https://stemis-application-bernardoabrum-bernardo-brums-projects.vercel.app/
-```
-
 ### Instale o json-server para poder executar o banco de dados:
 ```
 npm install json-server
@@ -24,6 +17,13 @@ npm install json-server
 ```
 json-server --watch db.json --port 3000
 
+```
+
+### Acesse a url do vercel onde a aplicação está hospedada, pode ser qualquer uma destas:
+```
+https://stemis-application.vercel.app/authenticate
+https://stemis-application-bernardo-brums-projects.vercel.app/
+https://stemis-application-bernardoabrum-bernardo-brums-projects.vercel.app/
 ```
 
 ### Agora, você pode criar ou acessar uma conta pelo Vercel, lembrando que deixei uma conta com permissão de barbeiro (email: admin, senha: admin), para após ter alguns agendamentos como cliente, possa acessar, e manipular informações como os serviços.
