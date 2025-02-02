@@ -16,7 +16,7 @@ const persistStatePlugin = (store) => {
 
 export default new Vuex.Store({
   state: {
-    user: undefined,
+    user: {},
     isAuthenticated: false,
     activeStep: 0,
     schedulingInfo: {},
@@ -28,7 +28,7 @@ export default new Vuex.Store({
     },
 
     logout(state) {
-      state.user = undefined;
+      state.user = {};
       state.isAuthenticated = false;
       localStorage.removeItem("vuex");
     },
