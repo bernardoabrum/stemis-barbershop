@@ -1,6 +1,8 @@
 <template>
   <div class="cmp-stepper">
-    <button @click="goBack">Voltar</button>
+    <div class="button-container">
+      <button @click="goBack">Voltar</button>
+    </div>
     <v-stepper alt-labels>
       <v-stepper-header>
         <v-stepper-step :class="{ active: activeStep === 0 }" step="1"
