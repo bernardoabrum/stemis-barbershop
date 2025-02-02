@@ -7,6 +7,12 @@
       "password": "admin",
       "isBarber": true,
       "img": "barbeiro1.webp"
+    },
+    {
+      "id": "46e6",
+      "name": "Bernardo",
+      "email": "bernardo",
+      "password": "bernardo"
     }
   ],
   "services": [
@@ -35,5 +41,24 @@
       "duration": "00:10"
     }
   ],
-  "schedulings": []
+  "schedulings": [
+    {
+      "id": "ff91",
+      "client": {
+        "id": "46e6",
+        "name": "Bernardo"
+      },
+      "service": {
+        "name": "Corte",
+        "price": 30,
+        "duration": "00:30"
+      },
+      "barber": {
+        "id": "1",
+        "name": "João (Barbeiro)"
+      },
+      "date": "2025-02-27",
+      "time": "08:00"
+    }
+  ]
 }
