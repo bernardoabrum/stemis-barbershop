@@ -30,6 +30,7 @@ export default new Vuex.Store({
     logout(state) {
       state.user = undefined;
       state.isAuthenticated = false;
+      localStorage.removeItem("vuex");
     },
     setSchedulingInfo(state, payload) {
       state.schedulingInfo = {
