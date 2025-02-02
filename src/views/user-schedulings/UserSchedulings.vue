@@ -1,26 +1,34 @@
 <template>
   <div class="user-schedulings-page">
     <h1>Meus agendamentos</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Serviço</th>
-          <th>Data</th>
-          <th>Hora</th>
-          <th>Barbeiro</th>
-          <th>Preço</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="scheduling in schedulings" :key="scheduling.id">
-          <td>{{ scheduling.service.name }}</td>
-          <td>{{ formatDate(scheduling.date) }}</td>
-          <td>{{ scheduling.time }}</td>
-          <td>{{ scheduling.barber.name }}</td>
-          <td>R${{ scheduling.service.price.toFixed(2) }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div v-if="schedulings.length" class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serviço</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Barbeiro</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="scheduling in schedulings" :key="scheduling.id">
+            <td>{{ scheduling.service.name }}</td>
+            <td>{{ formatDate(scheduling.date) }}</td>
+            <td>{{ scheduling.time }}</td>
+            <td>{{ scheduling.barber.name }}</td>
+            <td>R${{ scheduling.service.price.toFixed(2) }}</td>
+            <td class="btn">
+              <v-btn outlined @click="deleteScheduling(scheduling.id)"
+                >Excluir</v-btn
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p v-else>Você não tem agendamentos!</p>
   </div>
 </template>
 
@@ -66,6 +74,16 @@ export default {
       if (!date) return "";
       const [year, month, day] = date.split("-");
       return `${day}/${month}/${year}`;
+    },
+    async deleteScheduling(schedulingId) {
+      try {
+        await axios.delete(`http://localhost:3000/schedulings/${schedulingId}`);
+        this.schedulings = this.schedulings.filter(
+          (scheduling) => scheduling.id !== schedulingId
+        );
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 };

@@ -1,26 +1,29 @@
 <template>
   <div class="barber-schedulings-page">
     <h1>Meus agendamentos</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Serviço</th>
-          <th>Data</th>
-          <th>Hora</th>
-          <th>Cliente</th>
-          <th>Preço</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="scheduling in schedulings" :key="scheduling.id">
-          <td>{{ scheduling.service.name }}</td>
-          <td>{{ formatDate(scheduling.date) }}</td>
-          <td>{{ scheduling.time }}</td>
-          <td>{{ scheduling.client.name }}</td>
-          <td>R${{ scheduling.service.price.toFixed(2) }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div v-if="schedulings.length" class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serviço</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Cliente</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="scheduling in schedulings" :key="scheduling.id">
+            <td>{{ scheduling.service.name }}</td>
+            <td>{{ formatDate(scheduling.date) }}</td>
+            <td>{{ scheduling.time }}</td>
+            <td>{{ scheduling.client.name }}</td>
+            <td>R${{ scheduling.service.price.toFixed(2) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p v-else>Você não tem agendamentos!</p>
   </div>
 </template>
 
