@@ -8,7 +8,7 @@
         v-for="barber in barbers"
         :key="barber.id"
       >
-        <img src="../../assets/barba.jpg" alt="" />
+        <img :src="require(`@/assets/${barber.img}`)" alt="" />
         <p>{{ barber.name }}</p>
       </div>
     </div>

@@ -3,18 +3,27 @@
     {
       "id": "1",
       "name": "João (Barbeiro)",
-      "email": "admin",
-      "password": "admin",
-      "isBarber": true
+      "email": "barbeiro1",
+      "password": "123",
+      "isBarber": true,
+      "img": "barbeiro1.webp"
     },
     {
       "id": "2",
+      "name": "Matheus (Barbeiro)",
+      "email": "barbeiro2",
+      "password": "123",
+      "isBarber": true,
+      "img": "barbeiro2.webp"
+    },
+    {
+      "id": "3",
       "name": "José (Cliente)",
       "email": "user",
       "password": "user"
     },
     {
-      "id": "3",
+      "id": "4",
       "name": "Pedro (Cliente)",
       "email": "user2",
       "password": "user2"
