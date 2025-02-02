@@ -2,22 +2,22 @@
   "users": [
     {
       "id": "1",
-      "name": "Barbeiro 1",
+      "name": "João (Barbeiro)",
       "email": "admin",
       "password": "admin",
       "isBarber": true
     },
     {
       "id": "2",
-      "name": "Cliente 1",
+      "name": "José (Cliente)",
       "email": "user",
       "password": "user"
     },
     {
       "id": "3",
-      "name": "João",
-      "email": "joao@teste",
-      "password": "123123"
+      "name": "Pedro (Cliente)",
+      "email": "user2",
+      "password": "user2"
     }
   ],
   "services": [
@@ -46,78 +46,5 @@
       "duration": "00:10"
     }
   ],
-  "schedulings": [
-    {
-      "id": "1",
-      "client": {
-        "id": "2",
-        "name": "Cliente 1"
-      },
-      "service": {
-        "name": "Corte",
-        "price": 30,
-        "duration": "00:30"
-      },
-      "barber": {
-        "id": "1",
-        "name": "Barbeiro 1"
-      },
-      "date": "2025-02-12",
-      "time": "12:30"
-    },
-    {
-      "id": "2",
-      "client": {
-        "id": "2",
-        "name": "Cliente 1"
-      },
-      "service": {
-        "name": "Corte",
-        "price": 30,
-        "duration": "00:30"
-      },
-      "barber": {
-        "id": "1",
-        "name": "Barbeiro 1"
-      },
-      "date": "2025-02-13",
-      "time": "17:00"
-    },
-    {
-      "id": "3",
-      "client": {
-        "id": "3",
-        "name": "João"
-      },
-      "service": {
-        "name": "Corte",
-        "price": 30,
-        "duration": "00:30"
-      },
-      "barber": {
-        "id": "1",
-        "name": "Barbeiro 1"
-      },
-      "date": "2025-02-10",
-      "time": "12:30"
-    },
-    {
-      "id": "4",
-      "client": {
-        "id": "3",
-        "name": "João"
-      },
-      "service": {
-        "name": "Corte",
-        "price": 30,
-        "duration": "00:30"
-      },
-      "barber": {
-        "id": "1",
-        "name": "Barbeiro 1"
-      },
-      "date": "2025-02-10",
-      "time": "10:30"
-    }
-  ]
+  "schedulings": []
 }

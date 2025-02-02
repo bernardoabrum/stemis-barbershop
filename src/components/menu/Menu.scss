@@ -1,15 +1,28 @@
 .cmp-menu {
+  width: 500px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  button {
+    padding: 25px 30px !important;
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
   .user-menu {
     display: flex;
     flex-direction: column;
-    width: 300px;
     gap: 20px;
   }
 
   .barber-menu {
     display: flex;
     flex-direction: column;
-    width: 300px;
     gap: 20px;
   }
 }
