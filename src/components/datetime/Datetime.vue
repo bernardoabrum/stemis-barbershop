@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="button-container" v-if="selectedTime">
-      <v-btn @click="nextStep">Continuar</v-btn>
+      <v-btn outlined @click="nextStep">Continuar</v-btn>
     </div>
   </div>
 </template>

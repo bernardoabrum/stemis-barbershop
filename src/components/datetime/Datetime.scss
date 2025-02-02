@@ -3,7 +3,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 80px;
+  padding: 20px 60px 60px 60px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 
   h1 {
     font-size: 24px;
@@ -11,11 +15,12 @@
   }
 
   .date-picker-container {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 
     .v-picker__title {
-      background-color: blanchedalmond;
-      color: black;
+      background-color: black;
+      color: white;
 
       .v-date-picker-title__year {
         font-weight: 600;
@@ -31,17 +36,17 @@
     }
 
     .v-btn--active {
-      color: blue !important;
+      color: #3a001b !important;
     }
   }
 
   .time-picker-container {
-    margin-top: 20px;
+    margin-top: 30px;
 
     .time-list {
       display: flex;
       flex-wrap: wrap;
-      width: 600px;
+      max-width: 600px;
       gap: 20px;
       justify-content: center;
     }
@@ -49,19 +54,15 @@
     .time-item {
       font-size: 18px;
       padding: 15px 30px;
-      border: 1px solid #ccc;
+      border: 1px solid #3a001b;
       border-radius: 5px;
       cursor: pointer;
-      background-color: #f0f0f0;
+      background-color: transparent;
       transition: 0.3s;
     }
 
-    .time-item:hover {
-      background-color: #ddd;
-    }
-
     .time-item.selected {
-      background-color: #007bff;
+      background-color: black;
       color: white;
     }
   }
