@@ -4,7 +4,7 @@
       <Login />
       <Register />
     </div>
-    <p>Primeiro crie uma conta e faça alguns agendamentos</p>
+    <p>Primeiro crie uma ou mais contas e faça alguns agendamentos</p>
     <p>
       Depois, faça login usando email: "admin" e senha: "admin" para ter acesso
       a visão do barbeiro
