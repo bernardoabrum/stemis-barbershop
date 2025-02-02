@@ -1,7 +1,14 @@
 <template>
-  <div class="authenticate-page">
-    <Login />
-    <Register />
+  <div>
+    <div class="authenticate-page">
+      <Login />
+      <Register />
+    </div>
+    <p>Primeiro crie uma conta e faça alguns agendamentos</p>
+    <p>
+      Depois, faça login usando email: "admin" e senha: "admin" para ter acesso
+      a visão do barbeiro
+    </p>
   </div>
 </template>
 

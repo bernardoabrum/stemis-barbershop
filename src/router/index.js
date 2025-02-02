@@ -7,7 +7,7 @@ import Authenticate from "../views/authenticate/Authenticate.vue";
 import Scheduling from "../views/scheduling/Scheduling.vue";
 import UserSchedulings from "../views/user-schedulings/UserSchedulings.vue";
 import BarberSchedulings from "../views/barber-schedulings/BarberSchedulings.vue";
-import ServicesList from "../views/services-list/ServicesList.vue"
+import ServicesList from "../views/services-list/ServicesList.vue";
 
 Vue.use(Router);
 
@@ -56,16 +56,12 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   const { isAuthenticated } = store.getters;
 
-  if (to.name === "Home" && !isAuthenticated) {
+  if (!isAuthenticated && to.name !== "Authenticate") {
     next("/authenticate");
-  } else {
-    next();
-  }
-  if (to.name === "Authenticate" && isAuthenticated) {
+  } else if (isAuthenticated && to.name === "Authenticate") {
     next("/home");
   } else {
     next();
   }
 });
-
 export default router;

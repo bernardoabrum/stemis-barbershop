@@ -9,9 +9,8 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuetify)
-Vue.use(VueTheMask)
-;
+Vue.use(Vuetify);
+Vue.use(VueTheMask);
 const vuetify = new Vuetify();
 
 new Vue({
