@@ -29,8 +29,11 @@ export default {
   methods: {
     ...mapMutations({
       setUser: "setUser",
+      logout: "logout",
     }),
     async loginUser() {
+      this.logout();
+
       if (!this.email || !this.password) {
         alert("Preencha todos os campos!");
         return;
@@ -45,14 +48,16 @@ export default {
         );
 
         if (user) {
-          this.setUser(user)
-          this.$router.push("/home");
+          this.setUser(user);
+          setTimeout(() => {
+            this.$router.push("/home");
+          }, 100);
         } else {
           alert("Usuário não encontrado!");
         }
       } catch (error) {
         console.error(error);
-        alert('Erro na API')
+        alert('Erro na API');
       }
     },
   },
