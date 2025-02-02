@@ -59,6 +59,7 @@ export default {
         this.password = "";
       } catch (error) {
         console.error(error);
+        alert('Erro na API')
       }
     },
   },

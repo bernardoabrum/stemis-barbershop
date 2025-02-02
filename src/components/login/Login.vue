@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import "./Login.scss";
 import axios from "axios";
 
@@ -26,6 +27,9 @@ export default {
     };
   },
   methods: {
+    ...mapMutations({
+      setUser: "setUser",
+    }),
     async loginUser() {
       if (!this.email || !this.password) {
         alert("Preencha todos os campos!");
@@ -41,13 +45,14 @@ export default {
         );
 
         if (user) {
-          this.$store.commit("setUser", user);
+          this.setUser(user)
           this.$router.push("/home");
         } else {
           alert("Usuário não encontrado!");
         }
       } catch (error) {
         console.error(error);
+        alert('Erro na API')
       }
     },
   },
