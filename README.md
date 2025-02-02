@@ -15,7 +15,7 @@ npm install json-server
 ### O banco de dados é local pelo json-server, você precisa dele rodando para poder acessar:
 #### (esteja no diretório stemis-application pra rodar, as url's estão configuradas na porta 3000)
 ```
-json-server --watch db.json --port 3000
+npx json-server --watch db.json --port 3000
 
 ```
 
