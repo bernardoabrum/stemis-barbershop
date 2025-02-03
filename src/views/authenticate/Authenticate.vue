@@ -3,13 +3,18 @@
     <div class="authenticate-page">
       <Login />
       <Register />
+      <div class="info">
+        <p>
+          Certifique-se de que o json-server esteja observando o arquivo db.json
+          na porta 3000
+        </p>
+        <p>Primeiro crie uma ou mais contas e faça alguns agendamentos</p>
+        <p>
+          Depois, faça login usando email: "admin" e senha: "admin" para ter
+          acesso a visão do barbeiro
+        </p>
+      </div>
     </div>
-    <p>Certifique-se de que o json-server esteja observando o arquivo db.json na porta 3000</p>
-    <p>Primeiro crie uma ou mais contas e faça alguns agendamentos</p>
-    <p>
-      Depois, faça login usando email: "admin" e senha: "admin" para ter acesso
-      a visão do barbeiro
-    </p>
   </div>
 </template>
 
